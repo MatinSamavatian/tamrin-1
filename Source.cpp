@@ -1,46 +1,73 @@
 #include<iostream>
 #include<conio.h>
 #include<math.h>
+#include<string>
 using namespace std;
 
 int main()
 {
-	double weight, height, avg, m;
-	cout << " please enter your height(in CM):";
-		cin >> height;
-		cout << endl << "please enter your weight(in KG):";
-	cin >> weight;
+	double a, b, fact;
+	string operation;
 
-	m = height / 100;
-	avg = weight / (m * m);
-	cout <<"your body mass index point is:"<< avg << endl;
-	cout << "status:";
+	cout << "enter your numbers:";
+	cin >> a >> b;
+	cout << "enter operation:" << endl;
+	cin >> operation;
 
-	if (avg <= 18.5) {
-
-		cout << "underweight" << endl;
-
-	}
-	else if (18.6 < avg <= 24.9)
+	if (operation == "+")
 	{
-
-		cout << "normal" << endl;
+		cout << a + b << endl;
 
 	}
-	else if (25.0 < avg <= 29.9)
+    else if (operation == "-")
 	{
-
-		cout << "overweight" << endl;
+		cout << a - b << endl;
 
 	}
-	else if (30.0 < avg <= 34.9) {
+	else if (operation == "*")
+	{
+		cout << a * b << endl;
 
-		cout << "obese" << endl;
 	}
-	else
-		cout << "extremely obese" << endl;
+	else if (operation == "/")
+	{
+		if (b != 0)
+		{
+			cout << a / b << endl;
+		}
+		else
+			cout << "0";
+	}
+	else if (operation == "cos")
+	{
+		a = a * 3.14159 / 180;
+		cout << cos(a) << endl;
 
+	}
+	else if (operation == "sin")
+	{
+		a = a * 3.14159 / 180;
+		cout <<sin(a) << endl;
+	}
+	else if (operation == "tan")
+	{
+		a = a * 3.14159 / 180;
+		cout << tan(a) << endl;
 
+	}
+	else if (operation == "cot")
+	{
+		a = a * 3.14159 / 180;
+		cout << 1 / tan(a) << endl;
 
+	}
+	else if (operation == "fact")
+	{
+		fact = 1;
+		for (int i = a; i > 0; i--)
+			fact *= i;
+		cout << fact << endl;
+
+	}
 	system("pause>0");
 }
