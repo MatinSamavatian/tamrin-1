@@ -5,39 +5,42 @@ using namespace std;
 
 int main()
 {
-	string firstname, lastname;
-	double p1, p2, p3;
-	int average;
+	double weight, height, avg, m;
+	cout << " please enter your height(in CM):";
+		cin >> height;
+		cout << endl << "please enter your weight(in KG):";
+	cin >> weight;
 
-	cout << "first name: ";
-	cin >> firstname;
-	cout << endl;
-	cout << "lastname: ";
-	cin>> lastname;
-	cout << endl;
-	cout << "enter studies point: ";
-	cin>>p1 >> p2 >> p3;
+	m = height / 100;
+	avg = weight / (m * m);
+	cout <<"your body mass index point is:"<< avg << endl;
+	cout << "status:";
 
+	if (avg <= 18.5) {
 
-	average = (p1 + p2 + p3) / 3;
-	cout << "student name: " << firstname << " " << lastname<<endl;
-	cout <<"the student's average is: "<< average << endl;
-	if (average >= 17)
-	{
+		cout << "underweight" << endl;
 
-		cout << "great" << endl;
 	}
-	else if (12 <= average && average < 17)
+	else if (18.6 < avg <= 24.9)
 	{
 
 		cout << "normal" << endl;
 
 	}
-	else if (average < 12)
+	else if (25.0 < avg <= 29.9)
 	{
 
-		cout << "fail" << endl;
-	}
-	system("pause>0");
+		cout << "overweight" << endl;
 
+	}
+	else if (30.0 < avg <= 34.9) {
+
+		cout << "obese" << endl;
+	}
+	else
+		cout << "extremely obese" << endl;
+
+
+
+	system("pause>0");
 }
