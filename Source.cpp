@@ -1,73 +1,43 @@
 #include<iostream>
 #include<conio.h>
 #include<math.h>
-#include<string>
 using namespace std;
 
 int main()
 {
-	double a, b, fact;
-	string operation;
+	string firstname, lastname;
+	double p1, p2, p3;
+	int average;
 
-	cout << "enter your numbers:";
-	cin >> a >> b;
-	cout << "enter operation:" << endl;
-	cin >> operation;
+	cout << "first name: ";
+	cin >> firstname;
+	cout << endl;
+	cout << "lastname: ";
+	cin>> lastname;
+	cout << endl;
+	cout << "enter studies point: ";
+	cin>>p1 >> p2 >> p3;
 
-	if (operation == "+")
+
+	average = (p1 + p2 + p3) / 3;
+	cout << "student name: " << firstname << " " << lastname<<endl;
+	cout <<"the student's average is: "<< average << endl;
+	if (average >= 17)
 	{
-		cout << a + b << endl;
+
+		cout << "great" << endl;
+	}
+	else if (12 <= average && average < 17)
+	{
+
+		cout << "normal" << endl;
 
 	}
-    else if (operation == "-")
+	else if (average < 12)
 	{
-		cout << a - b << endl;
 
-	}
-	else if (operation == "*")
-	{
-		cout << a * b << endl;
-
-	}
-	else if (operation == "/")
-	{
-		if (b != 0)
-		{
-			cout << a / b << endl;
-		}
-		else
-			cout << "0";
-	}
-	else if (operation == "cos")
-	{
-		a = a * 3.14159 / 180;
-		cout << cos(a) << endl;
-
-	}
-	else if (operation == "sin")
-	{
-		a = a * 3.14159 / 180;
-		cout <<sin(a) << endl;
-	}
-	else if (operation == "tan")
-	{
-		a = a * 3.14159 / 180;
-		cout << tan(a) << endl;
-
-	}
-	else if (operation == "cot")
-	{
-		a = a * 3.14159 / 180;
-		cout << 1 / tan(a) << endl;
-
-	}
-	else if (operation == "fact")
-	{
-		fact = 1;
-		for (int i = a; i > 0; i--)
-			fact *= i;
-		cout << fact << endl;
-
+		cout << "fail" << endl;
 	}
 	system("pause>0");
+
 }
